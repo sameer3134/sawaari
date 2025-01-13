@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/sawaari_logo.png";
 import bike from "../assets/bike.png";
 import Sawaari from "./sawaari";
-import Blink from 'react-blink-text';
+// import Blink from 'react-blink-text';
 
 const Header = () => {
     const [scrollOffset, setScrollOffset] = useState(0);
@@ -47,7 +47,7 @@ const Header = () => {
                     </div>
 
                     <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start font-bold text-red-600 text-md">
-                        <Blink text="Currently running only in Patna" color="text-blue-500" fontSize='20' />
+                     Currently running only in Patna
                     </span>
                 </div>
             </div>
