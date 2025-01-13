@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/sawaari_logo.png";
 import bike from "../assets/bike.png";
 import Sawaari from "./sawaari";
+import Blink from 'react-blink-text';
 
 const Header = () => {
     const [scrollOffset, setScrollOffset] = useState(0);
@@ -25,23 +26,29 @@ const Header = () => {
     };
 
     return (
-        <div>
+        <div className="bg-gray-200">
             {/* Navbar */}
-            <div className="text-gray-600 body-font">
-                <div className="container px-5 mx-auto">
-                    <p className="w-12 h-12 md:h-20 md:w-20 p-2 rounded-full flex title-font font-medium">
-                        <img alt="logo" src={logo} />
-                        <span
-                            style={{
-                                background: "linear-gradient(90deg, #54ff98, #508aff)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                            className="ml-3 text-2xl md:text-4xl mt-0 md:mt-4"
-                        >
-                            Sawaari
-                        </span>
-                    </p>
+            <div class="text-gray-600 body-font">
+                <div class="container px-5 mx-auto flex items-center sm:flex-row flex-col">
+                    <div className="container px-5 mx-auto">
+                        <p className="w-12 h-12 md:h-20 md:w-20 p-2 rounded-full flex title-font font-medium">
+                            <img alt="logo" src={logo} />
+                            <span
+                                style={{
+                                    background: "linear-gradient(90deg, #54ff98, #508aff)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                }}
+                                className="ml-3 text-2xl md:text-4xl mt-0 md:mt-4"
+                            >
+                                Sawaari
+                            </span>
+                        </p>
+                    </div>
+
+                    <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start font-bold text-red-600 text-md">
+                        <Blink text="Currently running only in Patna" color="text-blue-500" fontSize='20' />
+                    </span>
                 </div>
             </div>
 
@@ -70,7 +77,7 @@ const Header = () => {
                                     color: "#00326b",
                                 }}
                             >
-                                Book Once Ride Daily...
+                                "Book Once Ride Daily 🏍️"
                             </h1>
                             <div className="mt-6 flex justify-end w-full">
                                 <button
@@ -117,9 +124,34 @@ const Header = () => {
                             is a platform where users can pre-schedule their rides on a weekly, monthly or flexible
                             basis. This ensures that a reliable rider is always available at your chosen time and
                             location, making your daily commute stress-free, punctual, and affordable. With Sawaari, you
-                            no longer need to worry about the daily struggle of finding a ride -we’ve got you covered!
+                            no longer need to worry about the daily struggle of finding a ride - <span
+                                className=" mt-0 md:mt-4 text-black font-semibold"
+                            >we’ve got you covered!
+                            </span>
                         </p>
                     </div>
+                </div>
+            </section>
+
+            <p className="mt-8 items-center text-4xl font-bold">How we are different from them</p>
+
+            <section class="text-gray-600 body-font overflow-hidden">
+                <div class="container px-5 py-6 mx-auto">
+                    <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                        <div class="w-full lg:w-1/2 lg:pl-10 lg:py-6 mt-6 lg:mt-0 ">
+                            <div className="border border-green-500 rounded-lg py-10 shadow-xl bg-gray-200"
+                            >
+                                <h2 class="title-font text-gray-500 text-lg font-bold  tracking-widest" style={{ color: "#0ccda6" }}>Cost Effective</h2>
+                                <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">20-30% lesser than others 😊</h1>
+                            </div></div>
+
+                        <div class="w-full lg:w-1/2 lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                        <div className="border border-green-500 rounded-lg py-10 shadow-xl bg-gray-200"
+                            >
+                                <h2 class="title-font text-gray-500 text-lg font-bold  tracking-widest" style={{ color: "#0ccda6" }}>Captain Assignment</h2>
+                                <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">within 18 hours 🕑</h1>
+                            </div>
+                        </div></div>
                 </div>
             </section>
 

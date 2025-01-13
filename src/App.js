@@ -1,11 +1,18 @@
 
 import "./App.css";
+import FetchData from "./components/FetchData.js";
 import Header from "./components/header.js";
+import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Header />
+       <Router>
+        <Routes>
+          <Route path="/" element={<Header />} />
+          <Route path="/xnxxqueries123" element={<FetchData />} />
+        </Routes>
+    </Router>
     </div>
   );
 }

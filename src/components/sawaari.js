@@ -58,22 +58,22 @@ const BookingForm = () => {
 
   return (
     <div className="mx-auto">
-      <h1 className="text-2xl font-bold mb-4"></h1>
       <section className="text-gray-600 body-font relative">
         <div className="container px-5 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+            <h1 className="sm:text-3xl text-2xl font-bold title-font  text-gray-900"  style={{
+
+                                    color: "#00326b",
+                                }}>
               Know your ride
             </h1>
           </div>
-          <form onSubmit={formik.handleSubmit} className="space-y-4 mb-10">
+          <form onSubmit={formik.handleSubmit} className="space-y-4 pb-10">
             <div className="lg:w-1/2 md:w-2/3 mx-auto">
               <div className="flex flex-wrap -m-2">
                 <div className="p-2 w-1/2">
                   <div>
-                    <label htmlFor="name" className="block font-medium">
-                      Name
-                    </label>
+                 
                     <input
                       id="name"
                       name="name"
@@ -82,6 +82,7 @@ const BookingForm = () => {
                       value={formik.values.name}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
+                      placeholder="Your Name"
                     />
                     {formik.touched.name && formik.errors.name ? (
                       <div className="text-red-500 text-sm">{formik.errors.name}</div>
@@ -90,9 +91,6 @@ const BookingForm = () => {
                 </div>
                 <div className="p-2 w-1/2">
                   <div>
-                    <label htmlFor="mobile" className="block font-medium">
-                      Mobile Number
-                    </label>
                     <input
                       id="mobile"
                       name="mobile"
@@ -101,6 +99,7 @@ const BookingForm = () => {
                       value={formik.values.mobile}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
+                      placeholder="Phone"
                     />
                     {formik.touched.mobile && formik.errors.mobile ? (
                       <div className="text-red-500 text-sm">{formik.errors.mobile}</div>
@@ -109,9 +108,6 @@ const BookingForm = () => {
                 </div>
                 <div className="p-2 w-1/2">
                   <div>
-                    <label htmlFor="pickup" className="block font-medium">
-                      Pickup Location
-                    </label>
                     <input
                       id="pickup"
                       name="pickup"
@@ -120,6 +116,7 @@ const BookingForm = () => {
                       value={formik.values.pickup}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
+                      placeholder="Pickup Location"
                     />
                     {formik.touched.pickup && formik.errors.pickup ? (
                       <div className="text-red-500 text-sm">{formik.errors.pickup}</div>
@@ -128,9 +125,6 @@ const BookingForm = () => {
                 </div>
                 <div className="p-2 w-1/2">
                   <div>
-                    <label htmlFor="drop" className="block font-medium">
-                      Drop Location
-                    </label>
                     <input
                       id="drop"
                       name="drop"
@@ -139,6 +133,7 @@ const BookingForm = () => {
                       value={formik.values.drop}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
+                      placeholder="Drop Location"
                     />
                     {formik.touched.drop && formik.errors.drop ? (
                       <div className="text-red-500 text-sm">{formik.errors.drop}</div>
@@ -197,7 +192,7 @@ const BookingForm = () => {
                 {/* Pickup Time */}
                 <div className="p-2 w-1/2">
                   <div>
-                    <label htmlFor="pickupTime" className="block font-medium">
+                    <label htmlFor="pickupTime" className="block font-medium  text-left">
                       Pickup Time
                     </label>
                     <input
@@ -208,6 +203,7 @@ const BookingForm = () => {
                       value={formik.values.pickupTime}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
+                      placeholder="Pickup Time"
                     />
                     {formik.touched.pickupTime && formik.errors.pickupTime ? (
                       <div className="text-red-500 text-sm">{formik.errors.pickupTime}</div>
@@ -219,7 +215,7 @@ const BookingForm = () => {
                 {formik.values.isRoundTrip && (
                   <div className="p-2 w-1/2">
                     <div>
-                      <label htmlFor="returnPickupTime" className="block font-medium">
+                      <label htmlFor="returnPickupTime" className="text-left block font-medium">
                         Return Pickup Time
                       </label>
                       <input
@@ -230,6 +226,7 @@ const BookingForm = () => {
                         value={formik.values.returnPickupTime}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
+                        placeholder="Return Pickup Time"
                       />
                       {formik.touched.returnPickupTime && formik.errors.returnPickupTime ? (
                         <div className="text-red-500 text-sm">{formik.errors.returnPickupTime}</div>
@@ -238,7 +235,7 @@ const BookingForm = () => {
                   </div>
                 )}
               </div>
-              <button type="submit" className="w-full mt-2 bg-blue-500 text-white py-2 rounded">
+              <button type="submit" className="w-full mt-8 bg-blue-500 text-white font-bold py-2 rounded-full"   style={{ backgroundColor: "#0ccda6" }}>
                 Submit
               </button>
             </div>
