@@ -17,6 +17,13 @@ const Header = () => {
         };
     }, []);
 
+    const handleKnowMoreClick = () => {
+        const infoSection = document.getElementById("sawaari-info");
+        if (infoSection) {
+            infoSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <div>
             {/* Navbar */}
@@ -52,27 +59,27 @@ const Header = () => {
                         {/* Image Section */}
                         <img
                             alt="ecommerce"
-                            className="w-1/2 lg:h-auto md:h-64 h-30 object-cover object-center rounded"
+                            className="w-1/2 lg:h-auto md:h-64 h-30 object-contain rounded"
                             src={bike}
                         />
                         {/* Text Section */}
                         <div className="w-1/2 lg:pr-10 lg:py-6 mb-6 lg:mb-0 flex flex-col items-center justify-center">
                             <h1
-                                className="text-gray-900 text-3xl md:text-8xl title-font font-medium"
+                                className="text-gray-900 text-3xl md:text-4xl title-font font-medium"
                                 style={{
-                                    color: "#508aff",
+                                    color: "#00326b",
                                 }}
                             >
                                 Book Once Ride Daily...
                             </h1>
                             <div className="mt-6 flex justify-end w-full">
-                                <a
-                                    href="#sawaari-info"
+                                <button
+                                    onClick={handleKnowMoreClick}
                                     className="text-white mt-0 xl:mt-10 py-1 md:py-2 md:px-8 px-4 text-[12px] md:text-xl rounded-full"
                                     style={{ backgroundColor: "#0ccda6" }}
                                 >
                                     Know more
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -85,8 +92,8 @@ const Header = () => {
                     className="h-3 w-full"
                     style={{
                         backgroundImage:
-                            "repeating-linear-gradient(to right, #fff, #fff 10px, transparent 20px, transparent 30px)",
-                        height: "3px",
+                            "repeating-linear-gradient(to right, #fff, #fff 30px, transparent 30px, transparent 60px)",
+                        height: "5px",
                     }}
                 ></div>
                 <div className="flex-grow"></div>
